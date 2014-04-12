@@ -9,3 +9,7 @@ sites = (
     'http://www.dedietrich.pl/'
 )
 
+try:
+    from src.local_settings import *
+except ImportError:
+    pass

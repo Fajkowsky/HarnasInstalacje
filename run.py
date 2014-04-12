@@ -1,7 +1,6 @@
 import argparse
 
-from src import settings
-
+from src import settings, run
 
 def get_parser():
     parser = argparse.ArgumentParser()
@@ -21,6 +20,5 @@ def valid_arg(args):
 if __name__ == '__main__':
     parser = get_parser()
     args = parser.parse_args()
-    print(args.link)
 
-
+    run(*args.link)

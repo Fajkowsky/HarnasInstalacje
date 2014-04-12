@@ -1,24 +1,26 @@
 import argparse
+
 from src import settings
+
 
 def get_parser():
     parser = argparse.ArgumentParser()
-    parser.add_argument('link', metavar='url', nargs=1)
+    parser.add_argument('link', metavar='url', nargs=1, type=valid_arg)
     return parser
+
 
 def valid_arg(args):
     for item in settings.sites:
         if item in args:
-            return True
-    return False
+            return args
+
+    msg = 'Not valid url'
+    raise argparse.ArgumentTypeError(msg)
 
 
 if __name__ == '__main__':
     parser = get_parser()
     args = parser.parse_args()
+    print(args.link)
 
-    if valid_arg(*args.link):
-        print("Valid url!")
-    else:
-        print("Not valid url!")
 

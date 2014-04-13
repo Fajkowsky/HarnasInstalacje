@@ -2,6 +2,8 @@ from setuptools import setup, find_packages
 
 
 requires = [
+    'requests',
+    'beautifulsoup4'
 ]
 
 setup(name='HarnasAutomater',

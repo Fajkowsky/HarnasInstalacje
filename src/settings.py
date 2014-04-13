@@ -9,6 +9,19 @@ sites = (
     'http://www.dedietrich.pl/'
 )
 
+download_types = (
+    'short_info',
+    'long_info',
+    'image'
+)
+
+url = 'http://demo.opencart.com/admin/'
+
+admin = {
+    'user': 'demo',
+    'pass': 'demo'
+}
+
 try:
     from src.local_settings import *
 except ImportError:

@@ -21,6 +21,7 @@ def download_by_url(url):
 
     html = get(url)
     soup = BeautifulSoup(html.content)
+
     class_name = get_class(url)
 
     data = globals()[class_name](soup)

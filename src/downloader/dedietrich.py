@@ -10,3 +10,10 @@ class Dedietrich:
 
     def get_description(self):
         pass
+
+    def get_values(self):
+        return {
+            'title': self.get_title(),
+            'picture': self.get_picture(),
+            'description': self.get_description()
+        }

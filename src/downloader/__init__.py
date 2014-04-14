@@ -24,3 +24,5 @@ def download_by_url(url):
     class_name = get_class(url)
 
     data = globals()[class_name](soup)
+
+    print(data.get_values())

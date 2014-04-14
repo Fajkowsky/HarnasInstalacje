@@ -10,7 +10,7 @@ def get_parser():
 
 
 def valid_arg(args):
-    for item in settings.sites:
+    for item in settings.sites.values():
         if item in args:
             return args
 
@@ -18,12 +18,8 @@ def valid_arg(args):
     raise argparse.ArgumentTypeError(msg)
 
 
-def get_obj(args):
-    return {}
-
 if __name__ == '__main__':
     parser = get_parser()
     args = parser.parse_args()
-    obj = get_obj(args)
 
-    run(obj, *args.link)
+    run(*args.link)

@@ -1,19 +1,13 @@
-sites = (
-    'http://www.logiterm.pl/',
-    'http://www.sas.busko.pl/pl/',
-    'http://enix.pl/',
-    'http://www.biawar.com.pl/',
-    'http://www.elektromet.com.pl/',
-    'http://www.vaillant.pl/',
-    'http://www.junkers.pl/pl/pl/start/',
-    'http://www.dedietrich.pl/'
-)
-
-download_types = (
-    'short_info',
-    'long_info',
-    'image'
-)
+sites = {
+    'logiterm': 'http://www.logiterm.pl/',
+    'sas': 'http://www.sas.busko.pl/pl/',
+    'enix': 'http://enix.pl/',
+    'biawar': 'http://www.biawar.com.pl/',
+    'elektromet': 'http://www.elektromet.com.pl/',
+    'vaillant': 'http://www.vaillant.pl/',
+    'junkers': 'http://www.junkers.pl/pl/pl/start/',
+    'dedietrich': 'http://www.dedietrich.pl'
+}
 
 url = 'http://demo.opencart.com/admin/'
 

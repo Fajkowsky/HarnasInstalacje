@@ -1,6 +1,7 @@
 from urllib.request import urlretrieve
 
-from ..settings import *
+from src import settings
+
 
 class Dedietrich:
     def __init__(self, content):
@@ -10,8 +11,11 @@ class Dedietrich:
         return self.content.h1.string
 
     def get_picture(self):
-        img_url = sites['dedietrich'] + self.picture.img['src']
-        img, headers = urlretrieve(img_url, 'tmp/file.tmp')
+        img_url = settings.sites['dedietrich'] + self.picture.img['src']
+        img, headers = urlretrieve(
+            img_url,
+            '{}file.tmp'.format(settings.tmp_directory)
+        )
         return img
 
     def get_description(self):

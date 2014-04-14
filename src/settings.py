@@ -9,6 +9,7 @@ sites = {
     'dedietrich': 'http://www.dedietrich.pl'
 }
 
+tmp_directory = 'tmp/'
 url = 'http://demo.opencart.com/admin/'
 
 admin = {

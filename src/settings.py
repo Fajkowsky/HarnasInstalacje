@@ -11,6 +11,7 @@ sites = {
 
 tmp_directory = 'tmp/'
 url = 'http://demo.opencart.com/admin/'
+chrome_driver = 'chromedriver'
 
 admin = {
     'user': 'demo',

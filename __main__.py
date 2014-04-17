@@ -1,5 +1,7 @@
 import tkinter as tk
+
 from src import run
+
 
 class Application(tk.Frame):
     def __init__(self, master=None):

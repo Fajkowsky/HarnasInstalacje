@@ -22,7 +22,7 @@ class Dedietrich:
         spam = self.content.select('.product')[0]
         for div in spam.findAll('div', 'pic'):
             self.picture = div.extract()
-        return spam
+        return str(spam).replace("\n", "")
 
     def get_values(self):
         return {

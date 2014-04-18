@@ -16,7 +16,11 @@ def upload_data(data):
 
     def fill_form(driver, data):
         driver.find_element_by_name("product_description[2][name]").send_keys(data['title'])
-        # driver.find_element_by_name("product_description[2][name]").send_keys(data['description'])
+        driver.find_element_by_xpath('//*[@id="cke_6"]/span[3]').click()
+        driver.find_element_by_xpath('//*[@id="cke_1_contents"]').click()
+        driver.execute_script("d = document.getElementsByTagName('pre');\
+            d[1].innerHTML = '{}';".format(data['description'])
+        )
 
     driver = webdriver.Chrome(chrome_driver)
     driver.get(url)

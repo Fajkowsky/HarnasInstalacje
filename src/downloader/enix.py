@@ -3,15 +3,16 @@ from urllib.request import urlretrieve
 from src import settings
 
 
-class Dedietrich:
+class Enix:
     def __init__(self, content):
-        self.content = content.select('#content')[0]
+        self.content = content.select(".product")[0]
 
     def get_title(self):
         return self.content.h1.string
 
     def get_picture(self):
-        img_url = settings.sites['dedietrich'] + self.picture.img['src']
+        content = self.content.select(".easyzoom")[0]
+        img_url = content.a['href']
         img, headers = urlretrieve(
             img_url,
             '{}file.png'.format(settings.tmp_directory)
@@ -19,10 +20,7 @@ class Dedietrich:
         return img
 
     def get_description(self):
-        spam = self.content.select('.product')[0]
-        for div in spam.findAll('div', 'pic'):
-            self.picture = div.extract()
-        return str(spam).replace("\n", "")
+        return self.content.select(".text")[0]
 
     def get_values(self):
         return {

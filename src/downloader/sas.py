@@ -3,15 +3,18 @@ from urllib.request import urlretrieve
 from src import settings
 
 
-class Dedietrich:
+class Sas:
     def __init__(self, content):
-        self.content = content.select('#content')[0]
+        self.left_panel = None
+        self.content = content.select(".nopad")[0]
 
     def get_title(self):
-        return self.content.h1.string
+        content = self.content.select("#tabs-1")[0]
+        self.left_panel = content.select('td')[1]
+        return self.left_panel.strong.text
 
     def get_picture(self):
-        img_url = settings.sites['dedietrich'] + self.picture.img['src']
+        img_url = self.content.select('.multithumb')[0]['src']
         img, headers = urlretrieve(
             img_url,
             '{}file.png'.format(settings.tmp_directory)
@@ -19,10 +22,7 @@ class Dedietrich:
         return img
 
     def get_description(self):
-        spam = self.content.select('.product')[0]
-        for div in spam.findAll('div', 'pic'):
-            self.picture = div.extract()
-        return str(spam).replace("\n", "")
+        return self.left_panel.table
 
     def get_values(self):
         return {

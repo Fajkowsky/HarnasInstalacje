@@ -6,7 +6,8 @@ sites = {
     'elektromet': 'http://www.elektromet.com.pl/',
     'vaillant': 'http://www.vaillant.pl/',
     'junkers': 'http://www.junkers.pl/pl/pl/start/',
-    'dedietrich': 'http://www.dedietrich.pl'
+    'dedietrich': 'http://www.dedietrich.pl',
+    'defro': 'http://www.defro.pl/'
 }
 
 tmp_directory = 'tmp/'

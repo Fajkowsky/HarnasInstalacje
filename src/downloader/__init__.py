@@ -4,6 +4,9 @@ from requests import get
 from bs4 import BeautifulSoup
 
 from .dedietrich import Dedietrich
+from .enix import Enix
+from .sas import Sas
+from .defro import Defro
 from ..settings import sites
 
 soup = None
